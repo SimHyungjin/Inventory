@@ -94,7 +94,8 @@ public class UIInventory : MonoBehaviour
 
     public void GetItem()
     {
-        Item item = new Item(UIManager.Instance.ItemDatas.itemInfos[1]);
+        int num = UnityEngine.Random.Range(0, UIManager.Instance.ItemDatas.itemInfos.Count);
+        Item item = new Item(UIManager.Instance.ItemDatas.itemInfos[num]);
         AddItem(item);
     }
 
