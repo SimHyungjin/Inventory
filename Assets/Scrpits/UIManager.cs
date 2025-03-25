@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
     public UIStatus UIStatus { get => uiStatus; set => uiStatus = value; }
     [SerializeField] private UIInventory uiInventory;
     public UIInventory UIInventory { get => uiInventory; set => uiInventory = value; }
+    [SerializeField] private ItemDatas itemDatas;
+    public ItemDatas ItemDatas { get => itemDatas; set => itemDatas = value; }
 
     private void Awake()
     {
@@ -25,5 +27,9 @@ public class UIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    private void Start()
+    {
+        uiStatus.Init();
     }
 }

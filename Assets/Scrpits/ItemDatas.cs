@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemHub : MonoBehaviour
+public class ItemDatas : MonoBehaviour
 {
-    public Item Item;
+    public List<ItemInfo> itemInfos;
 }

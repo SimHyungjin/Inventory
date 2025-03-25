@@ -20,7 +20,7 @@ public class UISlot : MonoBehaviour
 
     public void SetItem(Item item)
     {
-        this.item = new Item(item);
+        this.item = item;
     }
 
     public void RefreshUI()
@@ -29,8 +29,8 @@ public class UISlot : MonoBehaviour
             equip.gameObject.SetActive(true);
         else
             equip.gameObject.SetActive(false);
-        _name = item.Name;
-        _image.sprite = item.Icon;
+        _name = item.itemName;
+        _image.sprite = item.icon;
     }
 
     public void OnClick()

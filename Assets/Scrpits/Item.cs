@@ -1,38 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEditor.Search;
 using UnityEngine;
-using UnityEngine.UI;
 
-public enum ItemType
-{
-    Attack,
-    Defense,
-}
-[System.Serializable]
 public class Item
 {
-    [SerializeField] private string name;
-    public string Name { get { return name; } }
-    [SerializeField] private ItemType type;
-    public ItemType Type {  get { return type; } }
-    [SerializeField] private int value;
-    public int Value { get { return value; } }
-    [SerializeField] private string description;
-    public string Description { get { return description; } }
-    [SerializeField] private Sprite icon;
-    public Sprite Icon { get { return icon; } }
-    public bool equip = false;
+    public ItemInfo itemInfo;
 
-    public Item(Item other)
+    public string itemName;
+    public ItemType type;
+    public int value;
+    public string descrription;
+    public Sprite icon;
+    public bool equip;
+
+    public Item(ItemInfo itemInfo)
     {
-        this.name = other.name;
-        this.type = other.type;
-        this.value = other.value;
-        this.description = other.description;
-        this.icon = other.icon;
-        this.equip = other.equip;
+        this.itemInfo = itemInfo;
+        Init();
     }
 
+    void Init()
+    {
+        itemName = itemInfo.Name;
+        type = itemInfo.Type;
+        value = itemInfo.Value;
+        descrription = itemInfo.Description;
+        icon = itemInfo.Icon;
+        equip = false;
+    }
 }

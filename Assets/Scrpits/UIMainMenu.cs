@@ -44,6 +44,7 @@ public class UIMainMenu : MonoBehaviour
     void OpenStatus()
     {
         uiManager.UIStatus.gameObject.SetActive(true);
+
         uiManager.UIStatus.CharacterStatSet();
         ActiveBtn(mainBtn);
     }

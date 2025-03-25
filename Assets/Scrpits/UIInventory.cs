@@ -20,7 +20,7 @@ public class UIInventory : MonoBehaviour
     private bool isScroll = false;
     private Vector2 scrollPos;
 
-    public Action<ItemHub> Add;
+    public Action<Item> Add;
     public Action Equip;
     public Action UnEquip;
 
@@ -57,10 +57,10 @@ public class UIInventory : MonoBehaviour
 
         for (int i = 0; i < slots.Count; i++)
         {
-            if (slots[i].item.Name != string.Empty)
+            if (slots[i].item != null)
                 num++;
         }
-
+         
         inventoryNum.text = $"Inventory <color=orange>{num}</color> / {maxSlotNum}";
     }
     void InitInventoryUI()
@@ -92,19 +92,24 @@ public class UIInventory : MonoBehaviour
         }
     }
 
-    public void AddItem(ItemHub itemHub)
+    public void GetItem()
+    {
+        Item item = new Item(UIManager.Instance.ItemDatas.itemInfos[1]);
+        AddItem(item);
+    }
+
+    void AddItem(Item item)
     {
         for (int i = 0; i < slots.Count; i++)
         {
-            if (slots[i].item.Name == string.Empty)
+            if (slots[i].item == null)
             {
-                slots[i].SetItem(itemHub.Item);
-                slots[i].item.equip = false;
-                break;
+                slots[i].SetItem(item);
+                break; 
             }
         }
         UpdateUI();
-        Add?.Invoke(itemHub);
+        Add?.Invoke(item);
     }
 
     public void EquipItem()

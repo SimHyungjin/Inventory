@@ -208,11 +208,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1506726529}
         m_TargetAssemblyTypeName: UIInventory, Assembly-CSharp
-        m_MethodName: AddItem
-        m_Mode: 2
+        m_MethodName: GetItem
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 7024429831345410422, guid: 3625293885ec84a41b4bae984550e3ff, type: 3}
-          m_ObjectArgumentAssemblyTypeName: ItemHub, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3844,6 +3844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1622949563}
   - component: {fileID: 1622949564}
+  - component: {fileID: 1622949565}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -3884,6 +3885,30 @@ MonoBehaviour:
   uiMainMenu: {fileID: 1376392864}
   uiStatus: {fileID: 533762969}
   uiInventory: {fileID: 1506726529}
+  itemDatas: {fileID: 1622949565}
+--- !u!114 &1622949565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622949562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95bed9c1a85cd7248ae32dbe49de913e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemInfos:
+  - name: "\uB124\uBAA8"
+    type: 1
+    value: 10
+    description: "\uB124\uBAA8"
+    icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  - name: "\uB3D9\uADF8\uB77C\uBBF8"
+    type: 0
+    value: 10
+    description: "\uB3D9\uADF8\uB77C\uBBF8"
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &1651741926
 GameObject:
   m_ObjectHideFlags: 0

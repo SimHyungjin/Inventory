@@ -19,7 +19,7 @@ public class Character : MonoBehaviour
     public int health { get; private set; } = 100;
     public int critical { get; private set; } = 25;
 
-    public List<ItemHub> inventory = new();
+    public List<Item> inventory = new();
     private UIInventory uiInventory;
 
     private void Start()
@@ -30,33 +30,33 @@ public class Character : MonoBehaviour
         uiInventory.UnEquip += UnEquipItem;
     }
 
-    public void AddItem(ItemHub itemHub)
+    public void AddItem(Item itemHub)
     {
         inventory.Add(itemHub);
     }
 
     public void EquipItem()
     {
-        switch (uiInventory.curSlot.item.Type)
+        switch (uiInventory.curSlot.item.type)
         {
             case ItemType.Attack:
-                attack += uiInventory.curSlot.item.Value;
+                attack += uiInventory.curSlot.item.value;
                 
                 break;
             case ItemType.Defense:
-                defense += uiInventory.curSlot.item.Value;
+                defense += uiInventory.curSlot.item.value;
                 break;
         }
     }
     public void UnEquipItem()
     {
-        switch (uiInventory.curSlot.item.Type)
+        switch (uiInventory.curSlot.item.type)
         {
             case ItemType.Attack:
-                attack -= uiInventory.curSlot.item.Value;
+                attack -= uiInventory.curSlot.item.value;
                 break;
             case ItemType.Defense:
-                defense -= uiInventory.curSlot.item.Value;
+                defense -= uiInventory.curSlot.item.value;
                 break;
         }
 

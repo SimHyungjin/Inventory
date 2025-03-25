@@ -10,15 +10,17 @@ public class UIStatus : MonoBehaviour
     [SerializeField] private TextMeshProUGUI defense;
     [SerializeField] private TextMeshProUGUI health;
     [SerializeField] private TextMeshProUGUI critical;
+    Character character;
 
-    void Start()
+    public void Init()
     {
+        character = GameManager.instance.character;
         CharacterStatSet();
     }
 
     public void CharacterStatSet()
     {
-        Character character = GameManager.instance.character;
+        
         attack.text = character.attack.ToString();
         defense.text = character.defense.ToString();
         health.text = character.health.ToString();
