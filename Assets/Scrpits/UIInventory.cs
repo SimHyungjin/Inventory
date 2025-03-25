@@ -29,6 +29,11 @@ public class UIInventory : MonoBehaviour
         basicPos = slotPanel.anchoredPosition;
     }
 
+    private void OnEnable()
+    {
+        isScroll = false;
+    }
+
     void Start()
     {
         InventoryNumSet();
@@ -72,7 +77,7 @@ public class UIInventory : MonoBehaviour
     }
     void Scroll()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) 
         {
             isScroll = true;
             scrollPos = Input.mousePosition;

@@ -11,7 +11,7 @@ public class UISlot : MonoBehaviour
     [SerializeField] private Transform icon;
     [SerializeField] private Transform equip;
     [SerializeField] private Image _image;
-    [SerializeField] private string _name;
+
 
     private void Start()
     {
@@ -29,7 +29,6 @@ public class UISlot : MonoBehaviour
             equip.gameObject.SetActive(true);
         else
             equip.gameObject.SetActive(false);
-        _name = item.itemName;
         _image.sprite = item.icon;
     }
 
